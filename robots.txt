@@ -1,5 +1,1369 @@
-User-agent: *
-Allow: /
-Disallow: /goodies
-Sitemap: https://tahaluindo.groups.id/sitemap.xml
-Host: http://tahaluindo.groups.id
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LANN STORE</title>
+
+    <link rel="shortcut icon" href="https://lannstore.com/assets/1686643569_ec481c934dd4d72aaa47.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://lannstore.com/assets/css/style.css">
+
+    <style>
+        .accordion-button {
+            box-shadow: none !important;
+        }
+        .btn.disabled, .btn:disabled, fieldset:disabled {
+            background: #8ba4b1;
+            border-color: #8ba4b1;
+        }
+        .product .box {
+            margin-bottom: 40px;
+        }
+        .form-control {
+            box-shadow: none !important;
+            outline: none !important;
+        }
+        .bg-hero {
+            background-image: radial-gradient(rgba(255 255 255/50%),rgba(255 255 255/0)),url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTkyMCAxMDgwIiB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIj4KPGcgZmlsbD0iI2ZmZiI+Cgk8cGF0aCBmaWxsLW9wYWNpdHk9Ii4xIiBkPSJNMTExMS45IDBjLTE2OS4zIDIwMy4xLTE1NC43IDM0NC41IDEyMC42IDM5OC4yIDMzMi41IDYwLjYgMjg2LjkgMjc2LjkgODAuMSA0ODkuOS02My41IDU2LjctMTUwLjQgMTIxLjUtMjU0LjIgMTkxLjloNDYuNWMxMTUuOS03Ny42IDIxMi42LTE0OC43IDI4MS42LTIxMC40IDIwNi45LTIxMyAyNTIuNS00MjkuMy04MC4xLTQ4OS45LTI2Ni45LTUyLTI4OC44LTE4Ni42LTEzNS42LTM3OS43aC01OC45eiIvPjxwYXRoIGZpbGwtb3BhY2l0eT0iLjEiIGQ9Ik0xMTExLjkgMGMtMTY5LjMgMjAzLjEtMTU0LjggMzQ0LjUgMTIwLjYgMzk4LjIgMzMyLjUgNjAuNiAyODYuOSAyNzYuOSA4MC4xIDQ4OS45LTYzLjUgNTYuNy0xNTAuNCAxMjEuNS0yNTQuMiAxOTEuOWg5Mi42YzEyOC4zLTg0LjggMjM0LjktMTYyLjMgMzA5LjQtMjI4LjggMjA2LjktMjEzIDI1Mi41LTQyOS4zLTgwLjEtNDg5LjktMjU4LjUtNTAuNC0yODcuMy0xNzgtMTUwLTM2MS4zaC0xMTguNHoiLz48cGF0aCBmaWxsLW9wYWNpdHk9Ii4xIiBkPSJNMTExMS45IDBjLTE2OS4zIDIwMy4xLTE1NC43IDM0NC41IDEyMC42IDM5OC4yIDMzMi41IDYwLjYgMjg2LjkgMjc2LjkgODAuMSA0ODkuOS02My41IDU2LjctMTUwLjUgMTIxLjUtMjU0LjIgMTkxLjloMTM4LjNjMTQwLjgtOTIgMjU3LjYtMTc2IDMzNy40LTI0Ny4zIDIwNi45LTIxMyAyNTIuNS00MjkuMy04MC4xLTQ4OS45LTI0OS42LTQ4LjYtMjg0LjktMTY5LjQtMTYzLjItMzQyLjhoLTE3OC45eiIvPjxwYXRoIGZpbGwtb3BhY2l0eT0iLjEiIGQ9Ik0xMTExLjkgMGMtMTY5LjMgMjAzLjEtMTU0LjcgMzQ0LjUgMTIwLjYgMzk4LjIgMzMyLjUgNjAuNiAyODYuOSAyNzYuOSA4MC4xIDQ4OS45LTYzLjUgNTYuNy0xNTAuNSAxMjEuNS0yNTQuMiAxOTEuOWgxODMuOGMxNTMuNS05OS4zIDI4MC43LTE4OS43IDM2NS44LTI2NS43IDIwNi45LTIxMyAyNTIuNS00MjkuMy04MC4xLTQ4OS45LTI0MC43LTQ3LTI4Mi4xLTE2MC45LTE3NS44LTMyNC40aC0yNDAuMnoiLz48cGF0aCBmaWxsLW9wYWNpdHk9Ii4xIiBkPSJNMTExMS45IDBjLTE2OS4zIDIwMy4xLTE1NC44IDM0NC41IDEyMC42IDM5OC4yIDMzMi41IDYwLjYgMjg2LjkgMjc2LjkgODAuMSA0ODkuOS02My41IDU2LjctMTUwLjUgMTIxLjUtMjU0LjIgMTkxLjloMjI5YzE2Ni4zLTEwNi42IDMwNC4xLTIwMy41IDM5NC41LTI4NC4yIDIwNi45LTIxMyAyNTIuNS00MjkuMy04MC4xLTQ4OS45LTIzMS42LTQ1LjEtMjc4LjctMTUyLjMtMTg3LjMtMzA1LjloLTMwMi42eiIvPjxwYXRoIGZpbGwtb3BhY2l0eT0iLjEiIGQ9Ik03MzkuNCAwaC0yNDJDMjYzLjEgMTU2LjQgOTkuNCAzMjcuOSA3My4xIDUyOC45Yy0zMC42IDI1NS44IDM4NyAxNDcuNCAzODcgMzEyLjUtMi45IDc4LTMxLjUgMTU3LjMtNzkuNyAyMzguNmgzMDcuMmM4NS4yLTExNC4yIDEzNy44LTIyMy43IDE0MS44LTMzMC45IDAtMTY1LjItNDE3LjYtNTYuNy0zODctMzEyLjVDNDYzLjYgMjc0LjQgNTc0LjMgMTMxLjQgNzM5LjQgMHoiLz48cGF0aCBmaWxsLW9wYWNpdHk9Ii4xIiBkPSJNNzM5LjQgMEg1NDRDMzI0LjQgMTUxLjQgMTcyLjIgMzE3LjMgMTQ2LjkgNTEwLjRjLTMwLjYgMjU1LjggMzg3IDE0Ny40IDM4NyAzMTIuNS0zLjEgODMuOS0zNiAxNjkuMi05MSAyNTcuMWgyNDQuNmM4NS4yLTExNC4yIDEzNy44LTIyMy43IDE0MS44LTMzMC45IDAtMTY1LjItNDE3LjYtNTYuNy0zODctMzEyLjVDNDYzLjYgMjc0LjQgNTc0LjMgMTMxLjQgNzM5LjQgMHoiLz48cGF0aCBmaWxsLW9wYWNpdHk9Ii4xIiBkPSJNNzM5LjQgMEg1OTEuNUMzODYuMSAxNDYuNCAyNDUuMSAzMDYuNyAyMjAuOCA0OTJjLTMwLjYgMjU1LjggMzg3IDE0Ny40IDM4NyAzMTIuNUM2MDQuNSA4OTQuMyA1NjcgOTg1LjcgNTA1IDEwODBoMTgyLjZjODUuMi0xMTQuMiAxMzcuOC0yMjMuNyAxNDEuOC0zMzAuOSAwLTE2NS4yLTQxNy42LTU2LjctMzg3LTMxMi41QzQ2My42IDI3NC40IDU3NC4zIDEzMS40IDczOS40IDB6Ii8+PHBhdGggZmlsbC1vcGFjaXR5PSIuMSIgZD0iTTczOS40IDBoLTk5LjVjLTE5MS41IDE0MS40LTMyMiAyOTYtMzQ1LjMgNDczLjUtMzAuNiAyNTUuOCAzODcgMTQ3LjQgMzg3IDMxMi41LTMuNSA5NS42LTQ1LjggMTkzLjEtMTE1LjMgMjk0aDEyMS4yYzg1LjItMTE0LjIgMTM3LjgtMjIzLjcgMTQxLjgtMzMwLjkgMC0xNjUuMi00MTcuNi01Ni43LTM4Ny0zMTIuNUM0NjMuNiAyNzQuNCA1NzQuMyAxMzEuNCA3MzkuNCAweiIvPjxwYXRoIGZpbGwtb3BhY2l0eT0iLjEiIGQ9Ik03MzkuNCAwaC01MC4yQzUxMS4xIDEzNi40IDM5MC43IDI4NS4yIDM2OC41IDQ1NWMtMzAuNiAyNTUuOCAzODcgMTQ3LjQgMzg3IDMxMi41LTMuOCAxMDEuNS01MS4xIDIwNS0xMjguMyAzMTIuNWg2MC4zYzg1LjItMTE0LjIgMTM3LjgtMjIzLjcgMTQxLjgtMzMwLjkgMC0xNjUuMi00MTcuNi01Ni43LTM4Ny0zMTIuNUM0NjMuNiAyNzQuNCA1NzQuMyAxMzEuNCA3MzkuNCAweiIvPgo8L2c+Cjwvc3ZnPg==),linear-gradient(135deg,hsl(var(--background-hue) 15% 50%),hsl(calc(var(--background-hue) + 20) 15% 90%));
+            --background-hue: calc(var(--h,30) * 6);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;min-height: 200px;
+        }
+        .owl-dots {
+            display: none;
+        }
+        #content {
+            min-height: 600px;
+        }
+        .menu-nav a svg {
+            margin-right: 8px;
+            width: 16px;
+        }
+        .nav-search {
+            min-width: 300px;
+        }
+        .border-bottom-my {
+            border-bottom: 1px dashed var(--warna_4);
+        }
+        @media (min-width: 1400px) {
+            .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+                max-width: 1080px;
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            .nav-search {
+                padding-top: 16px;
+                min-width: 100px;
+            }
+        }
+        div#datatable_paginate a, div#datatable_paginate a:focus, div#datatable_paginate a:active {
+            box-shadow: none !important;
+            outline: none !important;
+            border: none !important;
+            background: transparent !important;
+            color: #c5c5c5 !important;
+        }
+        
+        div#datatable_paginate a.current {
+            color: #fff !important;
+            background: var(--warna_2) !important;
+        }
+        .fab-container {
+            position: fixed;
+            bottom: 70px;
+            right: 10px;
+            z-index: 999;
+            cursor: pointer;
+        }
+        .fab-icon-holder {
+            width: 45px;
+            height: 45px;
+            bottom: 140px;
+            left: 10px;
+            color: #FFF;
+            background: #FFFF00;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 30px;
+            z-index: 99999;
+        }
+        .fab-options {
+            list-style-type: none;
+            margin: 0;
+            position: absolute;
+            bottom: 48px;
+            left: -37px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            transform: scale(0);
+            transform-origin: 85% bottom;
+        }
+        .fab-options li {
+            display: flex;
+            justify-content: flex-start;
+            padding: 5px;
+        }
+        .fab:hover+.fab-options, .fab-options:hover {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+    <style>
+        .custom-social-proof {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 9999999999999 !important;
+            transition: .8s;
+            margin-bottom: -140px;
+        }
+        .custom-social-proof.show {
+            margin-bottom: 0;
+        }
+        .custom-notification {
+            width: 320px;
+            border: 0;
+            text-align: left;
+            z-index: 99999;
+            box-sizing: border-box;
+            font-weight: 400;
+            border-radius: 6px;
+            box-shadow: 2px 2px 10px 2px hsla(0, 4%, 4%, 0.2);
+            background-color: var(--warna_4);
+            position: relative;
+            cursor: pointer;
+        }
+        .custom-notification-container {
+            display: flex !important;
+            align-items: center;
+        }
+        .custom-notification-image-wrapper img {
+            max-height: 75px;
+            width: 90px;
+            overflow: hidden;
+            border-radius: 6px 0 0 6px;
+            object-fit: cover;
+        }
+                    .custom-notification-content-wrapper {
+                        margin: 0;
+                        height: 100%;
+                        color: gray;
+                        padding-left: 14px;
+                        padding-right: 8px;
+                        border-radius: 0 6px 6px 0;
+                        flex: 1;
+                        display: flex !important;
+                        flex-direction: column;
+                        justify-content: center;
+                        .custom-notification-content {
+                            font-family: inherit !important;
+                            margin: 14px 0 !important;
+                            padding: 0 !important;
+                            font-size: 13px;
+                            line-height: 16px;
+                            small {
+                                margin-top: 3px !important;
+                                display: block !important;
+                                font-size: 12px !important;
+                                opacity: .8;
+                            }
+                        }
+                    }
+                }
+                .custom-close {
+                    position: absolute;
+                    top: 8px;
+                    right: 8px;
+                    height: 12px;
+                    width: 12px;
+                    cursor: pointer;
+                    transition: .2s ease-in-out;
+                    transform: rotate(45deg);
+                    opacity: 0;
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        height: 2px;
+                        background-color: gray;
+                        position: absolute;
+                        left: 0;
+                        top: 5px;
+                    }
+                    &::after {
+                        content: "";
+                        display: block;
+                        height: 100%;
+                        width: 2px;
+                        background-color: gray;
+                        position: absolute;
+                        left: 5px;
+                        top: 0;
+                    }
+                }
+                &:hover {
+                    .custom-close {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    </style>
+
+            <link href="https://lannstore.com/assets/css/flipdown.min.css" rel="stylesheet">
+        <style>
+            .line-c {
+                overflow-x: auto;
+                white-space: nowrap;
+                flex-wrap: nowrap;
+            }
+            .line-item {
+                text-align: center;
+                display: inline-block;
+                position: relative;
+                color: #fff;
+                text-decoration: none;
+                padding: 0 12px 12px 12px;
+                border-bottom: 3px solid transparent;
+            }
+            .line-item.active {
+                border-color: var(--warna_5);
+            }
+            .line-item img {
+                width: 32px;
+                display: inline-block;
+            }
+            .line-item p {
+                font-size: 12px;
+                margin-bottom: 0;
+            }
+            .scale-animate {
+                transition: .3s;
+            }
+            .scale-animate:hover {
+                transform: scale(1.1);
+            }
+            .row-games {
+                padding: 0 8px;
+            }
+            .row-games .col-4 {
+                padding: 0 5px;
+            }
+            .flash-item {
+                display: inline-block;
+                width: 100%;
+                text-decoration: none;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                padding: 16px;
+                border-radius: 12px;
+                box-shadow: inset 0 0 0 2000px rgb(48 48 48 / 57%);
+            }
+            .flash-item b {
+                display: block;
+                margin-bottom: 6px;
+                margin-top: 56px;
+            }
+            .flash-item span {
+                display: inline-block;
+                background: var(--warna_2);
+                padding: 2px 8px;
+                border-radius: 6px;
+                font-weight: 700;
+                font-size: 14px;
+            }
+            .flash-item del {
+                font-weight: 600;
+                color: #e75c5c;
+            }
+            .flipdown {
+                height: 60px;
+            }
+            .flipdown .rotor {
+                font-size: 18px;
+            }
+            .flipdown .rotor,
+            .flipdown .rotor-leaf,
+            .flipdown .rotor-leaf-front,
+            .flipdown .rotor-leaf-rear,
+            .flipdown .rotor-top,
+            .flipdown .rotor-bottom,
+            .flipdown .rotor:after {
+                width: 26px;
+            }
+            
+            .flipdown .rotor-group {
+                padding-right: 10px;
+            }
+            
+            .flipdown .rotor-group:nth-child(n + 2):nth-child(-n + 3):before,
+            .flipdown .rotor-group:nth-child(n + 2):nth-child(-n + 3):after {
+                left: 76px;
+                display: none;
+            }
+            
+            .flipdown .rotor-group:nth-child(n + 2):nth-child(-n + 3):before {
+                bottom: 19px;
+                height: 8px;
+                width: 8px;
+                display: none;
+            }
+            
+            .flipdown .rotor-group:nth-child(n + 2):nth-child(-n + 3):after {
+                bottom: 35px;
+                height: 8px;
+                width: 8px;
+                display: none;
+            }
+            
+            .flipdown .rotor-leaf-front,
+            .flipdown .rotor-top {
+                line-height: 40px;
+            }
+            
+            .flipdown .rotor-leaf,
+            .flipdown .rotor {
+                height: 40px;
+            }
+            
+            .flipdown .rotor-leaf-front,
+            .flipdown .rotor-leaf-rear,
+            .flipdown .rotor-top,
+            .flipdown .rotor-bottom,
+            .flipdown .rotor:after {
+                height: 20px;
+            }
+            .rotor-group-heading {
+                display: none;
+            }
+        </style>
+        
+<style>.swal2-popup.swal2-toast{box-sizing:border-box;grid-column:1/4 !important;grid-row:1/4 !important;grid-template-columns:min-content auto min-content;padding:1em;overflow-y:hidden;background:#fff;box-shadow:0 0 1px rgba(0,0,0,.075),0 1px 2px rgba(0,0,0,.075),1px 2px 4px rgba(0,0,0,.075),1px 3px 8px rgba(0,0,0,.075),2px 4px 16px rgba(0,0,0,.075);pointer-events:all}.swal2-popup.swal2-toast>*{grid-column:2}.swal2-popup.swal2-toast .swal2-title{margin:.5em 1em;padding:0;font-size:1em;text-align:initial}.swal2-popup.swal2-toast .swal2-loading{justify-content:center}.swal2-popup.swal2-toast .swal2-input{height:2em;margin:.5em;font-size:1em}.swal2-popup.swal2-toast .swal2-validation-message{font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{grid-column:3/3;grid-row:1/99;align-self:center;width:.8em;height:.8em;margin:0;font-size:2em}.swal2-popup.swal2-toast .swal2-html-container{margin:.5em 1em;padding:0;overflow:initial;font-size:1em;text-align:initial}.swal2-popup.swal2-toast .swal2-html-container:empty{padding:0}.swal2-popup.swal2-toast .swal2-loader{grid-column:1;grid-row:1/99;align-self:center;width:2em;height:2em;margin:.25em}.swal2-popup.swal2-toast .swal2-icon{grid-column:1;grid-row:1/99;align-self:center;width:2em;min-width:2em;height:2em;margin:0 .5em 0 0}.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:bold}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{justify-content:flex-start;height:auto;margin:0;margin-top:.5em;padding:0 .5em}.swal2-popup.swal2-toast .swal2-styled{margin:.25em .5em;padding:.4em .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-0.8em;left:-0.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-0.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{animation:swal2-toast-animate-success-line-tip .75s}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{animation:swal2-toast-animate-success-line-long .75s}.swal2-popup.swal2-toast.swal2-show{animation:swal2-toast-show .5s}.swal2-popup.swal2-toast.swal2-hide{animation:swal2-toast-hide .1s forwards}div:where(.swal2-container){display:grid;position:fixed;z-index:1060;inset:0;box-sizing:border-box;grid-template-areas:"top-start     top            top-end" "center-start  center         center-end" "bottom-start  bottom-center  bottom-end";grid-template-rows:minmax(min-content, auto) minmax(min-content, auto) minmax(min-content, auto);height:100%;padding:.625em;overflow-x:hidden;transition:background-color .1s;-webkit-overflow-scrolling:touch}div:where(.swal2-container).swal2-backdrop-show,div:where(.swal2-container).swal2-noanimation{background:rgba(0,0,0,.4)}div:where(.swal2-container).swal2-backdrop-hide{background:rgba(0,0,0,0) !important}div:where(.swal2-container).swal2-top-start,div:where(.swal2-container).swal2-center-start,div:where(.swal2-container).swal2-bottom-start{grid-template-columns:minmax(0, 1fr) auto auto}div:where(.swal2-container).swal2-top,div:where(.swal2-container).swal2-center,div:where(.swal2-container).swal2-bottom{grid-template-columns:auto minmax(0, 1fr) auto}div:where(.swal2-container).swal2-top-end,div:where(.swal2-container).swal2-center-end,div:where(.swal2-container).swal2-bottom-end{grid-template-columns:auto auto minmax(0, 1fr)}div:where(.swal2-container).swal2-top-start>.swal2-popup{align-self:start}div:where(.swal2-container).swal2-top>.swal2-popup{grid-column:2;align-self:start;justify-self:center}div:where(.swal2-container).swal2-top-end>.swal2-popup,div:where(.swal2-container).swal2-top-right>.swal2-popup{grid-column:3;align-self:start;justify-self:end}div:where(.swal2-container).swal2-center-start>.swal2-popup,div:where(.swal2-container).swal2-center-left>.swal2-popup{grid-row:2;align-self:center}div:where(.swal2-container).swal2-center>.swal2-popup{grid-column:2;grid-row:2;align-self:center;justify-self:center}div:where(.swal2-container).swal2-center-end>.swal2-popup,div:where(.swal2-container).swal2-center-right>.swal2-popup{grid-column:3;grid-row:2;align-self:center;justify-self:end}div:where(.swal2-container).swal2-bottom-start>.swal2-popup,div:where(.swal2-container).swal2-bottom-left>.swal2-popup{grid-column:1;grid-row:3;align-self:end}div:where(.swal2-container).swal2-bottom>.swal2-popup{grid-column:2;grid-row:3;justify-self:center;align-self:end}div:where(.swal2-container).swal2-bottom-end>.swal2-popup,div:where(.swal2-container).swal2-bottom-right>.swal2-popup{grid-column:3;grid-row:3;align-self:end;justify-self:end}div:where(.swal2-container).swal2-grow-row>.swal2-popup,div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup{grid-column:1/4;width:100%}div:where(.swal2-container).swal2-grow-column>.swal2-popup,div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup{grid-row:1/4;align-self:stretch}div:where(.swal2-container).swal2-no-transition{transition:none !important}div:where(.swal2-container) div:where(.swal2-popup){display:none;position:relative;box-sizing:border-box;grid-template-columns:minmax(0, 100%);width:32em;max-width:100%;padding:0 0 1.25em;border:none;border-radius:5px;background:#fff;color:#545454;font-family:inherit;font-size:1rem}div:where(.swal2-container) div:where(.swal2-popup):focus{outline:none}div:where(.swal2-container) div:where(.swal2-popup).swal2-loading{overflow-y:hidden}div:where(.swal2-container) h2:where(.swal2-title){position:relative;max-width:100%;margin:0;padding:.8em 1em 0;color:inherit;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}div:where(.swal2-container) div:where(.swal2-actions){display:flex;z-index:1;box-sizing:border-box;flex-wrap:wrap;align-items:center;justify-content:center;width:auto;margin:1.25em auto 0;padding:0}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))}div:where(.swal2-container) div:where(.swal2-loader){display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:#2778c4 rgba(0,0,0,0) #2778c4 rgba(0,0,0,0)}div:where(.swal2-container) button:where(.swal2-styled){margin:.3125em;padding:.625em 1.1em;transition:box-shadow .1s;box-shadow:0 0 0 3px rgba(0,0,0,0);font-weight:500}div:where(.swal2-container) button:where(.swal2-styled):not([disabled]){cursor:pointer}div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#7066e0;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm:focus{box-shadow:0 0 0 3px rgba(112,102,224,.5)}div:where(.swal2-container) button:where(.swal2-styled).swal2-deny{border:0;border-radius:.25em;background:initial;background-color:#dc3741;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled).swal2-deny:focus{box-shadow:0 0 0 3px rgba(220,55,65,.5)}div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#6e7881;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel:focus{box-shadow:0 0 0 3px rgba(110,120,129,.5)}div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:focus{box-shadow:0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) button:where(.swal2-styled):focus{outline:none}div:where(.swal2-container) button:where(.swal2-styled)::-moz-focus-inner{border:0}div:where(.swal2-container) div:where(.swal2-footer){justify-content:center;margin:1em 0 0;padding:1em 1em 0;border-top:1px solid #eee;color:inherit;font-size:1em}div:where(.swal2-container) .swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;grid-column:auto !important;overflow:hidden;border-bottom-right-radius:5px;border-bottom-left-radius:5px}div:where(.swal2-container) div:where(.swal2-timer-progress-bar){width:100%;height:.25em;background:rgba(0,0,0,.2)}div:where(.swal2-container) img:where(.swal2-image){max-width:100%;margin:2em auto 1em}div:where(.swal2-container) button:where(.swal2-close){z-index:2;align-items:center;justify-content:center;width:1.2em;height:1.2em;margin-top:0;margin-right:0;margin-bottom:-1.2em;padding:0;overflow:hidden;transition:color .1s,box-shadow .1s;border:none;border-radius:5px;background:rgba(0,0,0,0);color:#ccc;font-family:monospace;font-size:2.5em;cursor:pointer;justify-self:end}div:where(.swal2-container) button:where(.swal2-close):hover{transform:none;background:rgba(0,0,0,0);color:#f27474}div:where(.swal2-container) button:where(.swal2-close):focus{outline:none;box-shadow:inset 0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) button:where(.swal2-close)::-moz-focus-inner{border:0}div:where(.swal2-container) .swal2-html-container{z-index:1;justify-content:center;margin:1em 1.6em .3em;padding:0;overflow:auto;color:inherit;font-size:1.125em;font-weight:normal;line-height:normal;text-align:center;word-wrap:break-word;word-break:break-word}div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) textarea:where(.swal2-textarea),div:where(.swal2-container) select:where(.swal2-select),div:where(.swal2-container) div:where(.swal2-radio),div:where(.swal2-container) label:where(.swal2-checkbox){margin:1em 2em 3px}div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) textarea:where(.swal2-textarea){box-sizing:border-box;width:auto;transition:border-color .1s,box-shadow .1s;border:1px solid #d9d9d9;border-radius:.1875em;background:rgba(0,0,0,0);box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px rgba(0,0,0,0);color:inherit;font-size:1.125em}div:where(.swal2-container) input:where(.swal2-input).swal2-inputerror,div:where(.swal2-container) input:where(.swal2-file).swal2-inputerror,div:where(.swal2-container) textarea:where(.swal2-textarea).swal2-inputerror{border-color:#f27474 !important;box-shadow:0 0 2px #f27474 !important}div:where(.swal2-container) input:where(.swal2-input):focus,div:where(.swal2-container) input:where(.swal2-file):focus,div:where(.swal2-container) textarea:where(.swal2-textarea):focus{border:1px solid #b4dbed;outline:none;box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) input:where(.swal2-input)::placeholder,div:where(.swal2-container) input:where(.swal2-file)::placeholder,div:where(.swal2-container) textarea:where(.swal2-textarea)::placeholder{color:#ccc}div:where(.swal2-container) .swal2-range{margin:1em 2em 3px;background:#fff}div:where(.swal2-container) .swal2-range input{width:80%}div:where(.swal2-container) .swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}div:where(.swal2-container) .swal2-range input,div:where(.swal2-container) .swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}div:where(.swal2-container) .swal2-input{height:2.625em;padding:0 .75em}div:where(.swal2-container) .swal2-file{width:75%;margin-right:auto;margin-left:auto;background:rgba(0,0,0,0);font-size:1.125em}div:where(.swal2-container) .swal2-textarea{height:6.75em;padding:.75em}div:where(.swal2-container) .swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:rgba(0,0,0,0);color:inherit;font-size:1.125em}div:where(.swal2-container) .swal2-radio,div:where(.swal2-container) .swal2-checkbox{align-items:center;justify-content:center;background:#fff;color:inherit}div:where(.swal2-container) .swal2-radio label,div:where(.swal2-container) .swal2-checkbox label{margin:0 .6em;font-size:1.125em}div:where(.swal2-container) .swal2-radio input,div:where(.swal2-container) .swal2-checkbox input{flex-shrink:0;margin:0 .4em}div:where(.swal2-container) label:where(.swal2-input-label){display:flex;justify-content:center;margin:1em auto 0}div:where(.swal2-container) div:where(.swal2-validation-message){align-items:center;justify-content:center;margin:1em 0 0;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}div:where(.swal2-container) div:where(.swal2-validation-message)::before{content:"!";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}div:where(.swal2-container) .swal2-progress-steps{flex-wrap:wrap;align-items:center;max-width:100%;margin:1.25em auto;padding:0;background:rgba(0,0,0,0);font-weight:600}div:where(.swal2-container) .swal2-progress-steps li{display:inline-block;position:relative}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:#2778c4;color:#fff;line-height:2em;text-align:center}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#2778c4}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:#2778c4}div:where(.swal2-icon){position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:2.5em auto .6em;border:0.25em solid rgba(0,0,0,0);border-radius:50%;border-color:#000;font-family:inherit;line-height:5em;cursor:default;user-select:none}div:where(.swal2-icon) .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}div:where(.swal2-icon).swal2-error{border-color:#f27474;color:#f27474}div:where(.swal2-icon).swal2-error .swal2-x-mark{position:relative;flex-grow:1}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-error.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark{animation:swal2-animate-error-x-mark .5s}div:where(.swal2-icon).swal2-warning{border-color:#facea8;color:#f8bb86}div:where(.swal2-icon).swal2-warning.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-warning.swal2-icon-show .swal2-icon-content{animation:swal2-animate-i-mark .5s}div:where(.swal2-icon).swal2-info{border-color:#9de0f6;color:#3fc3ee}div:where(.swal2-icon).swal2-info.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content{animation:swal2-animate-i-mark .8s}div:where(.swal2-icon).swal2-question{border-color:#c9dae1;color:#87adbd}div:where(.swal2-icon).swal2-question.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-question.swal2-icon-show .swal2-icon-content{animation:swal2-animate-question-mark .8s}div:where(.swal2-icon).swal2-success{border-color:#a5dc86;color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;transform:rotate(45deg);border-radius:50%}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=left]{top:-0.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=right]{top:-0.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}div:where(.swal2-icon).swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-0.25em;left:-0.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}div:where(.swal2-icon).swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-tip{animation:swal2-animate-success-line-tip .75s}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-long{animation:swal2-animate-success-line-long .75s}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-line-right{animation:swal2-rotate-success-circular-line 4.25s ease-in}[class^=swal2]{-webkit-tap-highlight-color:rgba(0,0,0,0)}.swal2-show{animation:swal2-show .3s}.swal2-hide{animation:swal2-hide .15s forwards}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{margin-right:initial;margin-left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}@keyframes swal2-toast-show{0%{transform:translateY(-0.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(0.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0deg)}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-0.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes swal2-show{0%{transform:scale(0.7)}45%{transform:scale(1.05)}80%{transform:scale(0.95)}100%{transform:scale(1)}}@keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(0.5);opacity:0}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-0.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(0.4);opacity:0}50%{margin-top:1.625em;transform:scale(0.4);opacity:0}80%{margin-top:-0.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0deg);opacity:1}}@keyframes swal2-rotate-loading{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes swal2-animate-question-mark{0%{transform:rotateY(-360deg)}100%{transform:rotateY(0)}}@keyframes swal2-animate-i-mark{0%{transform:rotateZ(45deg);opacity:0}25%{transform:rotateZ(-25deg);opacity:.4}50%{transform:rotateZ(15deg);opacity:.8}75%{transform:rotateZ(-5deg);opacity:1}100%{transform:rotateX(0);opacity:1}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto !important}body.swal2-no-backdrop .swal2-container{background-color:rgba(0,0,0,0) !important;pointer-events:none}body.swal2-no-backdrop .swal2-container .swal2-popup{pointer-events:all}body.swal2-no-backdrop .swal2-container .swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll !important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:static !important}}body.swal2-toast-shown .swal2-container{box-sizing:border-box;width:360px;max-width:100%;background-color:rgba(0,0,0,0);pointer-events:none}body.swal2-toast-shown .swal2-container.swal2-top{inset:0 auto auto 50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{inset:0 0 auto auto}body.swal2-toast-shown .swal2-container.swal2-top-start,body.swal2-toast-shown .swal2-container.swal2-top-left{inset:0 auto auto 0}body.swal2-toast-shown .swal2-container.swal2-center-start,body.swal2-toast-shown .swal2-container.swal2-center-left{inset:50% auto auto 0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{inset:50% auto auto 50%;transform:translate(-50%, -50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{inset:50% 0 auto auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-start,body.swal2-toast-shown .swal2-container.swal2-bottom-left{inset:auto auto 0 0}body.swal2-toast-shown .swal2-container.swal2-bottom{inset:auto auto 0 50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{inset:auto 0 0 auto}</style></head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: var(--warna_4);">
+        <div class="container">
+            <a class="navbar-brand" href="https://lannstore.com">
+                <img src="https://lannstore.com/assets/1686644158_4472582f486218cfa1e4.png" alt="" width="170">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="m-auto nav-search" action="https://lannstore.com" method="get">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Mau topup games apa?" name="search" autocomplete="off" value="">
+                        <button class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search" style="width: 18px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                    </div>
+                </form>
+                <ul class="navbar-nav mb-2 mb-lg-0 menu-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://lannstore.com/top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Top 10</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://lannstore.com/daftar-harga"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>Daftar Harga</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://lannstore.com/history"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Cek Pesanan</a>
+                    </li>
+                                        <li class="nav-item">
+                        <a class="nav-link" href="https://lannstore.com/account/signup"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>Join Member</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://lannstore.com/account">
+                            <button style="background: var(--warna_5);" class="border-0 px-4 py-2 fs-13 ms-2 rounded-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>Login</button>
+                        </a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="content">
+                <div class="mb-4">
+            <div class="container">
+                <div class="owl-carousel owl-theme owl-banner owl-loaded owl-drag">
+                                    <div class="owl-stage-outer"><div class="owl-stage"></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
+            </div>
+        </div>
+        
+                <div class="mb-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5>🔥 Flash Sale</h5>
+                        <div id="flipdown" class="flipdown flipdown__theme-light"><div class="rotor-group"><div class="rotor-group-heading" data-before="Days"></div><div class="rotor"><div class="rotor-leaf"><figure class="rotor-leaf-rear">0</figure><figure class="rotor-leaf-front">0</figure></div><div class="rotor-top">0</div><div class="rotor-bottom">0</div></div><div class="rotor"><div class="rotor-leaf"><figure class="rotor-leaf-rear">8</figure><figure class="rotor-leaf-front">8</figure></div><div class="rotor-top">8</div><div class="rotor-bottom">8</div></div></div><div class="rotor-group"><div class="rotor-group-heading" data-before="Hours"></div><div class="rotor"><div class="rotor-leaf"><figure class="rotor-leaf-rear">2</figure><figure class="rotor-leaf-front">2</figure></div><div class="rotor-top">2</div><div class="rotor-bottom">2</div></div><div class="rotor"><div class="rotor-leaf"><figure class="rotor-leaf-rear">0</figure><figure class="rotor-leaf-front">0</figure></div><div class="rotor-top">0</div><div class="rotor-bottom">0</div></div></div><div class="rotor-group"><div class="rotor-group-heading" data-before="Minutes"></div><div class="rotor"><div class="rotor-leaf"><figure class="rotor-leaf-rear">3</figure><figure class="rotor-leaf-front">3</figure></div><div class="rotor-top">3</div><div class="rotor-bottom">3</div></div><div class="rotor"><div class="rotor-leaf"><figure class="rotor-leaf-rear">2</figure><figure class="rotor-leaf-front">2</figure></div><div class="rotor-top">2</div><div class="rotor-bottom">2</div></div></div><div class="rotor-group"><div class="rotor-group-heading" data-before="Seconds"></div><div class="rotor"><div class="rotor-leaf"><figure class="rotor-leaf-rear">5</figure><figure class="rotor-leaf-front">5</figure></div><div class="rotor-top">5</div><div class="rotor-bottom">5</div></div><div class="rotor"><div class="rotor-leaf"><figure class="rotor-leaf-rear">3</figure><figure class="rotor-leaf-front">3</figure></div><div class="rotor-top">3</div><div class="rotor-bottom">3</div></div></div></div>
+                        <div class="owl-carousel owl-theme owl-loaded owl-drag" id="flash-sale">
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-568px, 0px, 0px); transition: all 0s ease 0s; width: 2086px;"><div class="owl-item cloned" style="width: 179.546px; margin-right: 10px;"><div class="item">
+                                <a class="flash-item" href="https://lannstore.com/games/free-fire?product=1195" style="background-image: url(https://lannstore.com/assets/games/1686424284_1433337128bd0b249743.jpg);">
+                                    <b>355 Diamond Promo murah</b>
+                                    <span>Rp 43.000</span><br>
+                                    <del>Rp 50.000</del>
+                                </a>
+                            </div></div><div class="owl-item cloned" style="width: 179.546px; margin-right: 10px;"><div class="item">
+                                <a class="flash-item" href="https://lannstore.com/games/free-fire?product=1194" style="background-image: url(https://lannstore.com/assets/games/1686424284_1433337128bd0b249743.jpg);">
+                                    <b>720 Diamonds Promo Murah</b>
+                                    <span>Rp 86.500</span><br>
+                                    <del>Rp 95.000</del>
+                                </a>
+                            </div></div><div class="owl-item cloned" style="width: 179.546px; margin-right: 10px;"><div class="item">
+                                <a class="flash-item" href="https://lannstore.com/games/mobile-legends?product=1127" style="background-image: url(https://lannstore.com/assets/games/1686387484_e0eae3eef508677abb8d.jpg);">
+                                    <b>300 Diamond Paket Starlight</b>
+                                    <span>Rp 70.000</span><br>
+                                    <del>Rp 75.000</del>
+                                </a>
+                            </div></div><div class="owl-item active" style="width: 179.546px; margin-right: 10px;"><div class="item">
+                                <a class="flash-item" href="https://lannstore.com/games/weekly?product=1198" style="background-image: url(https://lannstore.com/assets/games/1685902392_a9e741aa8e9998461e3c.png);">
+                                    <b>Weekly Diamond Pass ( Misi 82 )</b>
+                                    <span>Rp 24.000</span><br>
+                                    <del>Rp 30.000</del>
+                                </a>
+                            </div></div><div class="owl-item active" style="width: 179.546px; margin-right: 10px;"><div class="item">
+                                <a class="flash-item" href="https://lannstore.com/games/weekly?product=1197" style="background-image: url(https://lannstore.com/assets/games/1685902392_a9e741aa8e9998461e3c.png);">
+                                    <b>Weekly Diamond Pass ( Misi 100 )</b>
+                                    <span>Rp 26.000</span><br>
+                                    <del>Rp 35.000</del>
+                                </a>
+                            </div></div><div class="owl-item" style="width: 179.546px; margin-right: 10px;"><div class="item">
+                                <a class="flash-item" href="https://lannstore.com/games/free-fire?product=1195" style="background-image: url(https://lannstore.com/assets/games/1686424284_1433337128bd0b249743.jpg);">
+                                    <b>355 Diamond Promo murah</b>
+                                    <span>Rp 43.000</span><br>
+                                    <del>Rp 50.000</del>
+                                </a>
+                            </div></div><div class="owl-item" style="width: 179.546px; margin-right: 10px;"><div class="item">
+                                <a class="flash-item" href="https://lannstore.com/games/free-fire?product=1194" style="background-image: url(https://lannstore.com/assets/games/1686424284_1433337128bd0b249743.jpg);">
+                                    <b>720 Diamonds Promo Murah</b>
+                                    <span>Rp 86.500</span><br>
+                                    <del>Rp 95.000</del>
+                                </a>
+                            </div></div><div class="owl-item" style="width: 179.546px; margin-right: 10px;"><div class="item">
+                                <a class="flash-item" href="https://lannstore.com/games/mobile-legends?product=1127" style="background-image: url(https://lannstore.com/assets/games/1686387484_e0eae3eef508677abb8d.jpg);">
+                                    <b>300 Diamond Paket Starlight</b>
+                                    <span>Rp 70.000</span><br>
+                                    <del>Rp 75.000</del>
+                                </a>
+                            </div></div><div class="owl-item cloned" style="width: 179.546px; margin-right: 10px;"><div class="item">
+                                <a class="flash-item" href="https://lannstore.com/games/weekly?product=1198" style="background-image: url(https://lannstore.com/assets/games/1685902392_a9e741aa8e9998461e3c.png);">
+                                    <b>Weekly Diamond Pass ( Misi 82 )</b>
+                                    <span>Rp 24.000</span><br>
+                                    <del>Rp 30.000</del>
+                                </a>
+                            </div></div><div class="owl-item cloned" style="width: 179.546px; margin-right: 10px;"><div class="item">
+                                <a class="flash-item" href="https://lannstore.com/games/weekly?product=1197" style="background-image: url(https://lannstore.com/assets/games/1685902392_a9e741aa8e9998461e3c.png);">
+                                    <b>Weekly Diamond Pass ( Misi 100 )</b>
+                                    <span>Rp 26.000</span><br>
+                                    <del>Rp 35.000</del>
+                                </a>
+                            </div></div><div class="owl-item cloned" style="width: 179.546px; margin-right: 10px;"><div class="item">
+                                <a class="flash-item" href="https://lannstore.com/games/free-fire?product=1195" style="background-image: url(https://lannstore.com/assets/games/1686424284_1433337128bd0b249743.jpg);">
+                                    <b>355 Diamond Promo murah</b>
+                                    <span>Rp 43.000</span><br>
+                                    <del>Rp 50.000</del>
+                                </a>
+                            </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+        <div class="pt-2 mb-3" style="background: var(--warna_2);">
+            <div class="container">
+                <div class="line-c">
+                                        <a id="category-tranding" class="cursor-pointer line-item active" onclick="select_tipe('tranding');">
+                        <img src="https://lannstore.com/assets/tipe/1684760364_daf209fd4d04c85a3bc8.png" alt="">
+                        <p>TRANDING</p>
+                    </a>
+                                        <a id="category-game-lainnya" class="cursor-pointer line-item " onclick="select_tipe('game-lainnya');">
+                        <img src="https://lannstore.com/assets/tipe/1684760425_a33d9c4b7796508b1ea6.png" alt="">
+                        <p>GAME LAINNYA</p>
+                    </a>
+                                        <a id="category-pulsa-data" class="cursor-pointer line-item " onclick="select_tipe('pulsa-data');">
+                        <img src="https://lannstore.com/assets/tipe/1684682655_9d886dec118df0a85672.png" alt="">
+                        <p>PULSA &amp; DATA</p>
+                    </a>
+                                        <a id="category-voucher" class="cursor-pointer line-item " onclick="select_tipe('voucher');">
+                        <img src="https://lannstore.com/assets/tipe/1684761794_453316cf87968617b5ba.png" alt="">
+                        <p>VOUCHER</p>
+                    </a>
+                                        <a id="category-live-streaming" class="cursor-pointer line-item " onclick="select_tipe('live-streaming');">
+                        <img src="https://lannstore.com/assets/tipe/1686146845_e4a594ad3c014f445193.png" alt="">
+                        <p>LIVE STREAMING</p>
+                    </a>
+                                        <a id="category-apk-premium" class="cursor-pointer line-item " onclick="select_tipe('apk-premium');">
+                        <img src="https://lannstore.com/assets/tipe/1686146812_2f81e5bb0e00f2410107.png" alt="">
+                        <p>APK PREMIUM</p>
+                    </a>
+                                    </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                                <div class="col-md-12">
+                                        <div class="all-category-games " id="tipe-tranding">
+                                                <div class="mb-3">
+                            <h5 class="mb-3">Game Pupuler</h5>
+                            <div class="row row-games mb-4">
+                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/weekly" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685902392_a9e741aa8e9998461e3c.png" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Weekly Diamond Pass</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/mobile-legends" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686387484_e0eae3eef508677abb8d.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Mobile Legends Fast A</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/mlbb-paket-b" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685868009_66df63f2ac64a81144b7.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Mobile Legends Fast B</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/genshin-impact" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686399115_9a21c04cba1605f6b0b5.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Genshin Impact</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/pubg-mobile" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686588924_720fb9061074305d0873.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Pubg Mobile Indo</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/free-fire" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686424284_1433337128bd0b249743.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Free Fire</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/tower-of-fantasy" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686230851_56b05d3a17b7994edcba.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Tower of Fantasy</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/call-of-duty-mobile" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685896584_fff9ea0e4dd7a9b0c40f.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Call of Duty Mobile</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/league-of-legends-wild-rift" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685897021_2679d861c28953007866.png" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">League of Legends</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/point-blank" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685897482_41114d491594bdf3579f.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Point Blank Cash</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/dragon-raja-sea" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685897925_6cbfa132243fabdabcc7.png" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Dragon Raja</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/valorant" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685898391_51504c565ca3fa60e0a0.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Valorant</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/arena-of-valor" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685897655_a739f96ce448f449b44c.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Arena Of Valor</p>
+                                    </a>
+                                </div>
+                                                                                            </div>
+                        </div>
+                                            </div>
+                                        <div class="all-category-games d-none" id="tipe-game-lainnya">
+                                                <div class="mb-3">
+                            <h5 class="mb-3">Rekomendasi</h5>
+                            <div class="row row-games mb-4">
+                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/hyper-front" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685949979_bbd3731dd080f1910d09.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Hyper Front</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/super-sus" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685949599_8094effbee1694dd29fc.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Super Sus</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/ace-racer" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685949447_641a39556fa83e3b3687.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Ace Racer</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/luna-new-world" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685950438_773d24349c5453aa0b5b.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Luna New World</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/au2-mobile" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685951401_bfd06330eed30f4d2d88.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">AU2  MOBILE</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/love-nikki" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685951813_042c35e8e3be5178d98b.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Love Nikki</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/one-punch-man" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685952405_c8cf33c5ed63121fbe34.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">One Punch Man</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/bullet-angel" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685953019_ebe50d14aa514673d787.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Bullet Angel</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/mu-origin-3" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685953575_95a3b5735e76b6c5334f.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">MU ORIGIN 3</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/light-of-thel" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685954254_a8a87438ca4bf21b4be3.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Light of Thel</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/lifeafter-credits" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686209276_37735f26716a345eaca4.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">LifeAfter Credits</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/king-of-kings" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685958467_31849e579c0a73bb73c4.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">King of Kings</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/lords-mobile" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685959093_8507bf1a04486eb2cedb.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Lords Mobile</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/laplace-m" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685959808_5bc0dfd4db7201948098.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Laplace M</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/omega-legends" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685960364_ba1c2f60115a29471e64.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Omega Legends</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/tom-and-jerry-chase" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685961135_1755c5b86ceec627ec20.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Tom and Jerry</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/sausage-man" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685962016_db67c770d51644d1a8bd.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Susage Man</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/marvel-super-war" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685962252_a6104329268c366e5d40.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Marvel Super War</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/ys-6-mobile-vng" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685969193_610e3a7868599b892a26.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">YS 6 Mobile</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/speed-drifters" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685969690_a6de301fe9f42a1c779a.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Speed Drifters</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/marvel-snap" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685970045_f2f84ac0548bf30f8e3b.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Marvel Snap</p>
+                                    </a>
+                                </div>
+                                                                                            </div>
+                        </div>
+                                            </div>
+                                        <div class="all-category-games d-none" id="tipe-pulsa-data">
+                                                <div class="mb-3">
+                            <h5 class="mb-3">Pulsa</h5>
+                            <div class="row row-games mb-4">
+                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/telkomsel" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685970872_8cdbdeb63bb59bf6a301.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">TELKOMSEL</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/indosat" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685971079_3af0ba0fef04496918cb.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">INDOSAT</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/axis" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685971508_e993ef284ef792adb5e0.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">AXIS</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/tri" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685971789_7d2e55419bba04e9ec62.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">TRI</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/xl" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685973569_c24ef043bb9c2bfa7d87.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">XL</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/smartfren" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1685973718_c632ec195e037a89348f.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">SMARTFREN</p>
+                                    </a>
+                                </div>
+                                                                                            </div>
+                        </div>
+                                            </div>
+                                        <div class="all-category-games d-none" id="tipe-voucher">
+                                                <div class="mb-3">
+                            <h5 class="mb-3">Voucher instan</h5>
+                            <div class="row row-games mb-4">
+                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/playstation" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686058732_ab068856b3ab2f60b411.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">PlayStation Network (PSN)</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/steam-wallet-id" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686146413_fa82cd8a9deacb955725.png" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Steam Wallet Code</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/itunes-id" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686051826_bd6e11bc2ea6870ca341.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">iTunes ID</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/razer-gold-id" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686051004_b69121df522438c10e7c.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Voucher Razer Gold</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/garena-shell" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686047966_5e7ad951d968b2a6c840.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Garena Shell Murah</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/google-play" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686047344_e5f1b6d0e6e6d31b599a.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Google Play ID</p>
+                                    </a>
+                                </div>
+                                                                                            </div>
+                        </div>
+                                            </div>
+                                        <div class="all-category-games d-none" id="tipe-live-streaming">
+                                                <div class="mb-3">
+                            <h5 class="mb-3">Live App</h5>
+                            <div class="row row-games mb-4">
+                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/lita" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686160110_c767bf32b68dca31f1e5.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Lita</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/bigo-live" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686159384_8f385fbd5dcabd89083e.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Bigo Live</p>
+                                    </a>
+                                </div>
+                                                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/mango-live" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686146648_df7226fbb9752f2ef1f5.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Mango Live</p>
+                                    </a>
+                                </div>
+                                                                                            </div>
+                        </div>
+                                            </div>
+                                        <div class="all-category-games d-none" id="tipe-apk-premium">
+                                                <div class="mb-3">
+                            <h5 class="mb-3">Aplikasi Premium</h5>
+                            <div class="row row-games mb-4">
+                                                                                                <div class="col-md-2 col-4">
+                                    <a href="https://lannstore.com/games/canva-premium" class="text-decoration-none mb-4 d-block">
+                                        <img src="https://lannstore.com/assets/games/1686062344_2dadbcee801f2cc8368f.jpg" alt="" class="w-100 rounded-3 scale-animate">
+                                        <p class="mb-0 fs-14 mt-3 text-center">Canva Pro</p>
+                                    </a>
+                                </div>
+                                                                                            </div>
+                        </div>
+                                            </div>
+                                    </div>
+                            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 class="mt-4 mb-3">Kenapa Top Up Voucher Game Online dari LANN STORE?</h5>
+                    <div class="row">
+                                                <div class="col-md-4">
+                            <div class="card border-0 rounded-5 mb-3">
+                                <div class="card-body text-center rounded-4" style="background: var(--warna_4);">
+                                    <img src="https://lannstore.com/assets/1686483769_34c973ab6c93a1cf2eae.png" alt="" width="50" class="mb-3 mt-2">
+                                    <h5 class="mb-2">Mitra Resmi</h5>
+                                    <p>Bekerja langsung dengan produsen terkemuka dunia, kami menawarkan banyak item game dan produk hiburan.</p>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="col-md-4">
+                            <div class="card border-0 rounded-5 mb-3">
+                                <div class="card-body text-center rounded-4" style="background: var(--warna_4);">
+                                    <img src="https://lannstore.com/assets/1686484318_030838503829f33bc67d.png" alt="" width="50" class="mb-3 mt-2">
+                                    <h5 class="mb-2">Transaksi Mudah &amp; Terpercaya</h5>
+                                    <p>Kami menyediakan pembayaran yang mudah dan aman dengan banyak pilihan metode pembayaran.</p>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="col-md-4">
+                            <div class="card border-0 rounded-5 mb-3">
+                                <div class="card-body text-center rounded-4" style="background: var(--warna_4);">
+                                    <img src="https://lannstore.com/assets/1686484318_8c4db9914b76f92001e7.png" alt="" width="50" class="mb-3 mt-2">
+                                    <h5 class="mb-2">Bantuan Pelanggan</h5>
+                                    <p>Setiap kali Anda mengalami masalah dalam transaksi, Anda dapat menghubungi kami di whatsapp : 085322673542 atau bisa klik logo cs bawah kanan website ini</p>
+                                </div>
+                            </div>
+                        </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+            </section>
+
+    <section id="footer">
+        <div class="container">
+            <div class="p-4 rounded-3 mb-4 mt-5" style="background: var(--warna_4);"> 
+                <div class="row">
+                    <div class="col-md-7">
+                        <img src="https://lannstore.com/assets/1686644158_4472582f486218cfa1e4.png" alt="" width="176px" class="mb-3">
+                        <h5>LANN STORE</h5>
+                        <p class="fs-14">
+                            adalah tempat top up games yang aman, murah dan terpercaya. Proses cepat 1-3 Detik. Open 24 jam. Payment terlengkap                        </p>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="mb-4">
+                            <h6>Games Populer</h6>
+                            <div class="owl-carousel metode-top owl-theme owl-loaded owl-drag">
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-882px, 0px, 0px); transition: all 0s ease 0s; width: 3422px;"><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684985943_12cf7510cb6981d72942.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684985917_5e2277d789616e4dc156.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684805904_220a59d895795de4c1d6.jpg);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684805886_258d17b33443f63276dc.jpg);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/cod.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/free-fire.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/pubg.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/valorant.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item active" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684987588_1d0ec73f155be3d75665.jpeg);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item active" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684987552_ec90b770d9f5ff6a7dbb.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item active" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684987528_27a6afb1148478f97cdf.jpg);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684986096_05d7e45a63d4063b963c.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684986072_2cf83e011c2190823272.jpg);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684986042_a6d6102b327baf5d77a8.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684986013_cbb5113c734b5ff72b4c.jpg);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684985943_12cf7510cb6981d72942.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684985917_5e2277d789616e4dc156.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684805904_220a59d895795de4c1d6.jpg);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684805886_258d17b33443f63276dc.jpg);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/cod.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/free-fire.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/pubg.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/valorant.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684987588_1d0ec73f155be3d75665.jpeg);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684987552_ec90b770d9f5ff6a7dbb.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684987528_27a6afb1148478f97cdf.jpg);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684986096_05d7e45a63d4063b963c.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684986072_2cf83e011c2190823272.jpg);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684986042_a6d6102b327baf5d77a8.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684986013_cbb5113c734b5ff72b4c.jpg);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode" style="width: 94px;height: 55px;background-image: url(https://lannstore.com/assets/games/populer/1684985943_12cf7510cb6981d72942.png);background-size: cover;background-position: center center;">
+                                    </div>
+                                </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
+                        </div>
+                        <div class="mb-2">
+                            <h6>Metode Pembayaran</h6>
+                            <div class="owl-carousel metode-top owl-theme owl-loaded owl-drag">
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-772px, 0px, 0px); transition: all 0s ease 0s; width: 3091px;"><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686245264_446b26e720e68685eb0c.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686245071_9a98ef0e433582875ce4.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686245959_10dedec289bc722e7bd6.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686245425_44e7bf2262db1fe66e13.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686245507_7cf3934fcfbc46c8f588.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686245780_4b4aec83a217ec05d79b.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686219491_17bae77cccf9469c2281.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item active" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1687129127_b8e1a54b454ecf62a89b.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item active" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686216240_12161f7055a44f248bfa.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item active" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686216503_727b3e2195ed9af77510.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686244685_6d213b2f8402ac1b366f.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686244955_1a85e45423f1abd1a317.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686219476_51079d9ef73132faf7aa.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1687129173_0860e591461b9b03c5c7.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686245264_446b26e720e68685eb0c.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686245071_9a98ef0e433582875ce4.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686245959_10dedec289bc722e7bd6.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686245425_44e7bf2262db1fe66e13.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686245507_7cf3934fcfbc46c8f588.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686245780_4b4aec83a217ec05d79b.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686219491_17bae77cccf9469c2281.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1687129127_b8e1a54b454ecf62a89b.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686216240_12161f7055a44f248bfa.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686216503_727b3e2195ed9af77510.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686244685_6d213b2f8402ac1b366f.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686244955_1a85e45423f1abd1a317.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1686219476_51079d9ef73132faf7aa.png" alt="">
+                                    </div>
+                                </div></div><div class="owl-item cloned" style="width: 100.364px; margin-right: 10px;"><div class="item">
+                                    <div class="metode">
+                                        <img src="https://lannstore.com/assets/metode/1687129173_0860e591461b9b03c5c7.png" alt="">
+                                    </div>
+                                </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="float-end">
+                    <a class="text-white text-decoration-none mx-1 fs-13" href="https://lannstore.com/bantuan">Bantuan</a>
+                    <a class="text-white text-decoration-none mx-1 fs-13" href="https://lannstore.com/pertanyaan-umum">Pertanyaan Umum</a>
+                    <a class="text-white text-decoration-none mx-1 fs-13" href="https://lannstore.com/kebijakan-privasi">Kebijakan Privasi</a>
+                    <a class="text-white text-decoration-none mx-1 fs-13" href="https://lannstore.com/syarat-ketentuan">Syarat &amp; Ketentuan</a>
+                </div>
+                Copyright © 2022 LANN STORE - All Right Reserved
+            </div>
+        </div>
+    </section>
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+            <script src="https://lannstore.com/assets/js/flipdown.min.js"></script>
+                <script>
+    	    document.addEventListener('DOMContentLoaded', () => {
+    	        var flipdown = new FlipDown(1688058000, {
+    	            theme: "light",
+    	        }).start().ifEnded(() => {
+    	            window.location.reload();
+                });
+            });
+    	</script>
+    	        <script>
+            $('.owl-banner').owlCarousel({
+                loop:true,
+                margin:10,
+                nav:false,
+                autoplay:true,
+                autoplayTimeout:3000,
+                autoplayHoverPause:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:1
+                    },
+                    1000:{
+                        items:1
+                    }
+                }
+            });
+            
+            $('#flash-sale').owlCarousel({
+                loop:true,
+                margin:10,
+                nav:false,
+                autoplay:true,
+                autoplayTimeout:3000,
+                autoplayHoverPause:true,
+                responsive:{
+                    0:{
+                        items:2
+                    },
+                    600:{
+                        items:4
+                    },
+                    1000:{
+                        items:5
+                    }
+                }
+            });
+
+            function select_tipe(slug) {
+                $(".line-item").removeClass('active');
+                $("#category-" + slug).addClass('active');
+
+                $(".all-category-games").addClass('d-none');
+
+                $("#tipe-" + slug).removeClass('d-none');
+            }
+        </script>
+        
+    
+    
+        <script>
+
+        feather.replace();
+
+        $('.metode-top').owlCarousel({
+            loop:true,
+            margin:10,
+            autoplay:true,
+            autoplayTimeout:2000,
+            responsive:{
+                0:{
+                    items:3
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:4
+                }
+            }
+        });
+
+        function salin(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                Swal.fire('Berhasil', 'Teks berhasil disalin', 'success');
+            });
+        }
+
+        function close_modal_popup() {
+            if ($("#i-read").prop('checked')) {
+                $.ajax({
+                    url: 'https://lannstore.com/home/popup',
+                });
+            }
+        }
+    </script>
+    
+    <section class="custom-social-proof" style="border: 1px solid var(--warna_4);border-radius: 12px;">
+        <div class="custom-notification">
+            <div class="custom-notification-container">
+                <div class="custom-notification-image-wrapper" style="padding-left: 18px;">
+                    <img id="map1" src="https://lannstore.com/assets/1686643569_ec481c934dd4d72aaa47.png" style="width: 50px; height: 50px">
+                </div>
+                <div class="custom-notification-content-wrapper">
+                    <div class="py-2">
+                        <span class="d-block" id="order_id" style="font-weight: 500;font-size: 13px;margin-bottom: 2px;"></span>
+                        <span class="d-block" style="font-size: 13px;margin-bottom: 2px;">Berhasil membeli <span id="product"></span></span>
+                        <small style="font-size: 11px;" class="d-block"><span id="time">-</span> </small>
+                        <small style="font-size: 11px;color: orange;">www.lannstore.com</small>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-close"></div>
+        </div>
+    </section>
+
+    <script>
+        $(".custom-social-proof").on('click', function() {
+            window.location.href = '/history';
+        });
+    </script>
+    
+    <script>
+        var product = new Array ();
+
+        $.ajax({
+            url: 'https://lannstore.com/home/sales',
+            dataType: 'JSON',
+            success: function(result) {
+                product = result;
+            }
+        });
+        
+        $(".custom-close").click(function() {
+            $(".custom-social-proof").removeClass('show');
+        });
+        
+        function load_product() {
+            
+            $(".custom-social-proof").addClass('show');
+
+            var random_id = Math.floor(7 * Math.random());
+            var data_product = product[random_id].split('@-@-@');
+            
+            $('#order_id').text(data_product[0]);
+            $('#product').text(data_product[1]);
+            $('#time').text(data_product[2]);
+            
+            setTimeout(function() {
+                $(".custom-social-proof").removeClass('show');
+            }, 4000);
+        }
+        
+        setInterval(function() {
+            load_product();
+        }, 6000);
+    </script>
+    
+    <div class="fab-container">
+        <div class="fab fab-icon-holder" style="background-color:#FFF; padding:5px">
+            <img src="https://lannstore.com/assets/callcenter.png" class="img-fluid" alt="" style="margin-top: -6px;">
+        </div>
+        <ul class="fab-options">
+                        <li>
+                <a href="https://wa.me/6285322673542?text=Halo%20kak%20saya%20ada%20kendala%20dalam%20transaksi%20mohon%20di%20bantu%F0%9F%99%8F" class="text-decoration-none" target="_blank">
+                    <div class="fab-icon-holder bg-white">
+                        <img src="https://lannstore.com/assets/sosmed/1686426838_42dc0edea7fee65b8d60.png" width="45" style="margin-top: -8px;">
+                    </div>
+                </a>
+            </li>
+                        <li>
+                <a href="https://www.tiktok.com/@lannstore12/" class="text-decoration-none" target="_blank">
+                    <div class="fab-icon-holder bg-white">
+                        <img src="https://lannstore.com/assets/sosmed/1683891970_5e2b5b5a62540d5c3a9e.png" width="45" style="margin-top: -8px;">
+                    </div>
+                </a>
+            </li>
+                        <li>
+                <a href="https://www.instagram.com/lannstore_12/" class="text-decoration-none" target="_blank">
+                    <div class="fab-icon-holder bg-white">
+                        <img src="https://lannstore.com/assets/sosmed/1683725542_e60c1f8fdbcc6ff3891d.png" width="45" style="margin-top: -8px;">
+                    </div>
+                </a>
+            </li>
+                    </ul>
+        <a href="#" class="act-btn-top text-decoration-none" onclick="toTop()" style="display: none; background-color: #bd4cae; bottom: 19px;">
+            <i class="fas fa-angle-up mt-2"></i>
+        </a>
+    </div>
+
+<style>.qc-cmp-showing { visibility: hidden !important; } body.didomi-popup-open { overflow: auto !important; } #didomi-host { visibility: hidden !important; }</style></body>
